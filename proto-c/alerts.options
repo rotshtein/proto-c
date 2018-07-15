@@ -1,0 +1,6 @@
+# alerts.options
+Header.message_data		max_size:128
+Polygon.points 			max_count:4
+Polygon.object_ids		max_count:2
+WarningSettings.polygons	max_count:4
+Warnings.wornings		max_size:2
