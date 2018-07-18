@@ -43,7 +43,7 @@ ErrorCode ProtocolBuildMessage(unsigned char *Dest, unsigned char opcode, unsign
 	dest->Preamble = PROTOCOL_MESSAGE_PREAMBLE;
 	dest->Opcode = opcode;
 
-	dest->pData[len] = CalcCrc(dest, dest->Length-1);
+	dest->pData[len] = CalcCrc((unsigned char *)dest, dest->Length-1);
 
 	return etErrorCodeSuccess;
 }
@@ -72,7 +72,7 @@ int IsProtocolMessageValid(Msg *pBuffer)
 		return 0;
 	}
 
-	int i = (CalcCrc(pBuffer, pBuffer->Length - 1) == ((char *)pBuffer)[pBuffer->Length-1]);
+	int i = (CalcCrc((unsigned char *)pBuffer, pBuffer->Length - 1) == ((unsigned char *)pBuffer)[pBuffer->Length-1]);
 	return i;
 }
 
@@ -81,7 +81,3 @@ Msg *GetLastProtocolMessage()
 	return lastMessage;
 }
 
-unsigned short GetProtocolData(unsigned char *pBuffer)
-{
-
-}

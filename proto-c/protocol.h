@@ -1,4 +1,5 @@
 #pragma once
+#pragma pack (push)
 #pragma pack (1)
 
 typedef enum
@@ -20,6 +21,8 @@ typedef _declspec(align(1)) struct  _msg
 	unsigned char Opcode;
 	unsigned char pData[1];
 } Msg;
+
+#pragma pack (pop)
 
 #define PROTOCOL_HEADER_SIZE		sizeof(Msg)-1
 #define PROTOCOL_OVERHEAD_SIZE		PROTOCOL_HEADER_SIZE + 1
