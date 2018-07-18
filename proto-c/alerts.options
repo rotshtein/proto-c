@@ -9,4 +9,4 @@ ObjectId.majority_count int_size:8
 ObjectId.majority_min   int_size:8
      
 Warning.object_ids		max_count:2
-Warnings.wornings		int_size:16
+Warnings.warnings		int_size:16

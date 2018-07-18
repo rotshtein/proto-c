@@ -50,5 +50,5 @@ message Warning
 
 message Warnings
 {
-	 uint32 wornings = 1;
+	 uint32 warnings = 1;
 }

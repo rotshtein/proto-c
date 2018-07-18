@@ -159,14 +159,15 @@
     <ClInclude Include="pb_common.h" />
     <ClInclude Include="pb_decode.h" />
     <ClInclude Include="pb_encode.h" />
-    <ClInclude Include="proto-c.h" />
+    <ClInclude Include="protocol.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="alerts.pb.c" />
     <ClCompile Include="pb_common.c" />
     <ClCompile Include="pb_decode.c" />
     <ClCompile Include="pb_encode.c" />
-    <ClCompile Include="proto-c.cpp" />
+    <ClCompile Include="proto-c.c" />
+    <ClCompile Include="protocol.c" />
   </ItemGroup>
   <ItemGroup>
     <None Include="alerts.options" />
