@@ -1,0 +1,9 @@
+/proto-c/x64
+*.obj
+*.exe
+*.ilk
+*.pdb
+*.db
+*.log
+*.tlog
+*.lastbuildstate

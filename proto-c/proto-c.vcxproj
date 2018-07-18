@@ -110,6 +110,12 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <CustomBuildStep>
+      <Command>generate.bat alerts.proto</Command>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <TreatOutputAsContent>false</TreatOutputAsContent>
+    </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -152,6 +158,8 @@
     <ClInclude Include="pb.h" />
     <ClInclude Include="pb_common.h" />
     <ClInclude Include="pb_decode.h" />
+    <ClInclude Include="pb_encode.h" />
+    <ClInclude Include="proto-c.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="alerts.pb.c" />
@@ -162,7 +170,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="alerts.options" />
-    <None Include="alerts.proto" />
+    <None Include="alerts.proto">
+      <FileType>Text</FileType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Text Include="README.txt" />

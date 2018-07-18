@@ -16,7 +16,7 @@ enum OPCODE
 	HEADER = 0;
 	ACK = 1;
 	NACK = 2;
-	WARNINGS_SETTING = 3;
+	POLYGON_SETTING = 3;
 	WARNINGS = 4;
 }
 
@@ -25,13 +25,6 @@ enum OPCODE
 
 /*****************************************************************************************************************************/
 //
-message Header
-{
-	 OPCODE opcode = 1;			// Opcode
-	 bytes message_data = 2;
-}
-
-
 message Point
 {
 	 uint32	x = 1;
@@ -42,24 +35,20 @@ message ObjectId
 {
 	 OBJECT_ID object_id = 1;
 	 uint32 confidence = 2;
+	 uint32 majority_count = 3;
+	 uint32 majority_min = 4;
 }
 
-message Polygon
+message Warning
 {
-	repeated Point points = 1;
-	repeated ObjectId object_ids = 2;
-}
-
-/*****************************************************************************************************************************/
-//
-message WarningSettings
-{
-	repeated Polygon polygons = 1;
+	uint32	id = 1;
+	repeated Point points = 2;
+	repeated ObjectId object_ids = 3;
 }
 
 /*****************************************************************************************************************************/
 
 message Warnings
 {
-	 bytes wornings = 1;
+	 uint32 wornings = 1;
 }
