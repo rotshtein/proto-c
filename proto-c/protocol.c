@@ -36,8 +36,10 @@ ErrorCode ProtocolBuildMessage(unsigned char *Dest, unsigned char opcode, unsign
 	//unsigned char *pData = ((char *)dest) + sizeof(Msg);
 	lastMessage = dest;
 	
-	memcpy(dest->pData, data, len);
-	
+	if (dest->pData != data)
+	{
+		memcpy(dest->pData, data, len);
+	}
 	dest->Length = len + PROTOCOL_OVERHEAD_SIZE;
 
 	dest->Preamble = PROTOCOL_MESSAGE_PREAMBLE;
